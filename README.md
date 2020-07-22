@@ -30,7 +30,7 @@ Clone this repo with your Visual Studo.
 git clone https://github.com/nealpandey/smallapi.git
 ```
 
-### Prerequisites to run locally.
+### 2. Prerequisites to run locally.
 
 Microsoft Visual Studio Community 2019
 Version 16.6.4
@@ -40,6 +40,6 @@ Version 16.6.4
 Azure Development SDK. You can install with Visual Studio 2019.
 
 
-### Note
+### 3. Note
 
 This is a first shot and not a finish work. The endpoints have been tested using POSTMAN. As always with some review and iterations, this can be made better.
