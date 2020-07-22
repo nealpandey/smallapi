@@ -6,12 +6,16 @@ A quick excercise to demo. The Small API is built using Azure Functions, .Net Co
 The sample work provides the following endpoints:
 
 1. For Post a request : https://smallapi.azurewebsites.net/api/request
+
     This endpoint accepts a JSON document consisting of a one key, "body", assigns a id, and stores the document in CosmoDB
 2. Post Callback: https://smallapi.azurewebsites.net/api/callback
+
     This Callback endpoint can be used post update the status of document. It accepts request with document id and status in JSON format.
 3. Put Callback: https://smallapi.azurewebsites.net/api/callback
+
     This Callback endpoint can be used PUT update the status of document. It accepts request with document id, status and detail in JSON format.
 4. Get Status: https://smallapi.azurewebsites.net/api/status/{id}
+
     Given the unique ID, we should be able to get the status of the document.
     
 Please refer the exercise requirements of the above endpoints or contact me for any questions.
