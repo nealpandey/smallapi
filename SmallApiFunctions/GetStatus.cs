@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Http.Extensions;
+using Newtonsoft.Json.Linq;
 
 namespace SmallApiFunctions
 {
@@ -18,13 +19,13 @@ namespace SmallApiFunctions
             [CosmosDB("SampleDB", "Requests",
                 ConnectionStringSetting = "npdbcs",
                 SqlQuery = "select * from c where c.id = {id}")]
-                IEnumerable<Document> Documents,
+                IEnumerable<JObject> Documents,
             ILogger log)
         {
             if (Documents.Count() > 0)
             {
-                Document document = Documents.First<Document>();
-                return new OkObjectResult(document.Body);
+                JObject document = Documents.First<JObject>();
+                return new OkObjectResult(document);
             }
             else
             {
