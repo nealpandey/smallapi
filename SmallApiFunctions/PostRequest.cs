@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Microsoft.Azure.Documents.SystemFunctions;
 using System.Net.Http;
 
 namespace SmallApiFunctions
@@ -17,7 +16,7 @@ namespace SmallApiFunctions
         [FunctionName("PostRequest")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "request")] HttpRequest req,
-            [CosmosDB(databaseName: "SampleDB", collectionName: "Requests", ConnectionStringSetting = "npdbcs")] out object document,
+            [CosmosDB(databaseName: "SampleDB", collectionName: "SmallApiDocs", ConnectionStringSetting = "npdbcs")] out object document,
             ILogger log)
         {
             try

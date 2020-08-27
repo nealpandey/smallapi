@@ -14,12 +14,9 @@ namespace SmallApiFunctions
     {
         [FunctionName("GetStatus")]
         public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get",
-                Route = "status/{id}")] HttpRequest req,
-            [CosmosDB("SampleDB", "Requests",
-                ConnectionStringSetting = "npdbcs",
-                SqlQuery = "select * from c where c.id = {id}")]
-                IEnumerable<JObject> Documents,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "status/{id}")] HttpRequest req,
+            [CosmosDB("SampleDB", "SmallApiDocs", ConnectionStringSetting = "npdbcs", SqlQuery = "select * from c where c.id = {id}")]
+            IEnumerable<JObject> Documents,
             ILogger log)
         {
             if (Documents.Count() > 0)
